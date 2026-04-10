@@ -3338,17 +3338,17 @@ input, select, textarea {
 
 /* Dropdown Specific Styles */
 
-/* 1. Ensure the parent 'li' is the anchor for the dropdown position */
+
 #nav ul li.dropdown {
 	position: relative;
 	display: inline-block;
 }
 
-/* 2. Style the hidden dropdown list */
+
 #nav ul li ul {
 	display: none;
 	position: absolute;
-	top: 100%; /* Positions it directly below the parent */
+	top: 100%;
 	left: 50%;
 	transform: translateX(-50%);
 
@@ -3374,15 +3374,15 @@ input, select, textarea {
 	padding: 0.5em 1.25em;
 	height: auto;
 	line-height: normal;
-	border-radius: 0; /* Match look of dropdown */
+	border-radius: 0;
 }
 
-/* 4. Show the dropdown on hover */
+
 #nav ul li:hover > ul {
 	display: block;
 }
 
-/* Optional: Slight tweak for the .alt (fixed) nav state */
+
 #nav.alt ul li ul {
 	background-color: rgba(247, 247, 247, 0.98);
 }
@@ -3850,7 +3850,7 @@ input, select, textarea {
 
 
 
-/* Scoped Reset: Only affects elements inside projects-list */
+
 .projects-list,
 .projects-list * {
 	margin: 0;
@@ -3859,13 +3859,13 @@ input, select, textarea {
 	font-family: "Poppins", sans-serif;
 }
 
-/* Replaces the 'body' selector: Centers the list within its own container */
+
 .projects-list {
 	display: flex;
-	flex-direction: column; /* Keeps the H2 above the UL */
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background: #ffffff; /* Optional: remove if you want your page background to show through */
+	background: #ffffff;
 	position: relative;
 }
 
@@ -3882,7 +3882,7 @@ a:hover {
 	border-bottom-color: transparent;
 }
 
-/* Changed .list to .projects-list to match your HTML */
+
 .projects-list h2 {
 	color: #fff;
 	font-weight: 700;
@@ -3946,12 +3946,12 @@ a:hover {
 
 
 
-/* 1. Define the icon name and its unicode */
+/* Define icon name and unicode */
 .fa-letterboxd:before {
 	content: "\e62d" !important;
 }
 
-/* 2. Force the browser to look at the SVG font file you edited */
+/* Forces browser to look at SVG font file */
 @font-face {
 	font-family: "Font Awesome 5 Brands";
 	src: url("../webfonts/fa-brands-400.svg#fontawesome") format("svg") !important;
@@ -3966,17 +3966,28 @@ a:hover {
 
 
 #random-image {
-	/* 1. The Shape */
+	/* Shape */
 	clip-path: circle();
 
-	/* 2. The Responsive Size */
+	/* Responsive Size */
 	width: 31.25vw;
 	aspect-ratio: 1 / 1; /* Keeps it a perfect square/circle */
 	height: auto;
 
-	/* 3. The Scaling Magic */
+	/* Scaling */
 	object-fit: cover;
 
-	/* 4. Optional: Positioning */
+	/* Positioning */
 	object-position: center;
+}
+
+#custom_heading {
+	display: block;
+	font-size: clamp(1.5rem, 5vw, 4rem) !important;
+	color: #ffffff;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
 }

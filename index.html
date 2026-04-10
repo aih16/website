@@ -4,7 +4,7 @@
 		Add Aber Webring
 		Finish work section
 		Finish Education section
-		Look into having the landing page picture change every refresh
+		Add "currently looking for work" possibly as a speech bubble
 -->
 <html>
 	<head>
@@ -24,7 +24,7 @@
 					<header id="header" class="alt">
 						<span class="logo"><img id="random-image" src="" style="clip-path: circle();" alt="" /></span>
 
-						<h1>Aidan Hogden</h1>
+						<p id="custom_heading">Aidan Hogden</p>
 						<p>Senior Application Developer<br />
 						& AI MSc Gradaute.</p>
 
@@ -250,9 +250,9 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-		<!-- Random image picker script-->
+		<!-- Randomly generate the home page image by generating a random array based on number of images available, then cycle through that array and once done regenerates the array
+		 Making the random less random -->
 		<script>
-			// 1. Create an array of your image file paths
 			const images = [
 				'images/frontpage/me_beach.jpg',
 				'images/frontpage/me.jpg',
@@ -263,12 +263,48 @@
 				'images/frontpage/me_waistcoat.jpg'
 			];
 
-			// 2. Generate a random index based on the array length
-			const randomIndex = Math.floor(Math.random() * images.length);
+			function generateShuffledOrder(length, forbiddenStart)
+			{
+				let arr = Array.from({length: length}, (_, i) => i);
 
-			// 3. Select the image element and update its 'src' attribute
-			document.getElementById('random-image').src = images[randomIndex];
+				// Shuffle the array
+				const shuffle = (array) => {
+					for (let i = array.length - 1; i > 0; i--) {
+						const j = Math.floor(Math.random() * (i + 1));
+						[array[i], array[j]] = [array[j], array[i]];
+					}
+					return array;
+				};
+
+				let newOrder = shuffle([...arr]);
+
+				// If the new first element is the same as the previous last element, reshuffle
+				while (newOrder[0] === forbiddenStart && length > 1) {
+					newOrder = shuffle([...arr]);
+				}
+
+				return newOrder;
+			}
+
+			let savedOrder = JSON.parse(localStorage.getItem('imageOrder'));
+			let currentStep = localStorage.getItem('imageStep');
+
+			// Determine if need a new cycle
+			if (!savedOrder || currentStep === null || currentStep >= savedOrder.length) {
+				// Find out what the last image shown was to prevent a duplicate
+				const lastImageOfOldCycle = savedOrder ? savedOrder[savedOrder.length - 1] : null;
+
+				savedOrder = generateShuffledOrder(images.length, lastImageOfOldCycle);
+				currentStep = 0;
+			}
+
+			const imageIndexToDisplay = savedOrder[currentStep];
+			document.getElementById('random-image').src = images[imageIndexToDisplay];
+
+			localStorage.setItem('imageOrder', JSON.stringify(savedOrder));
+			localStorage.setItem('imageStep', parseInt(currentStep) + 1);
 		</script>
+
 
 	</body>
 </html>
