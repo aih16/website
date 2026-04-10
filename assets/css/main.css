@@ -3962,3 +3962,21 @@ a:hover {
 .fa-letterboxd {
 	font-family: "Font Awesome 5 Brands" !important;
 }
+
+
+
+#random-image {
+	/* 1. The Shape */
+	clip-path: circle();
+
+	/* 2. The Responsive Size */
+	width: 31.25vw;
+	aspect-ratio: 1 / 1; /* Keeps it a perfect square/circle */
+	height: auto;
+
+	/* 3. The Scaling Magic */
+	object-fit: cover;
+
+	/* 4. Optional: Positioning */
+	object-position: center;
+}
