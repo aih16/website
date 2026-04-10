@@ -89,9 +89,7 @@
 							<section id="intro" class="main">
 								<div class="spotlight">
 									<div class="content">
-										<header class="major">
-											<h2>Hi, my name's Aidan.</h2>
-										</header>
+										<h2><span id="random-greetings"></span>I'm Aidan.</h2>
 										<p>I'm a Senior Developer for the Senedd, working as a "full-stack" engineer specifically ASP.NET where I mainly create internal web apps for use at the Senedd. <br>
 										My academic background is in AI and ML as I studied AI & Robotics for my Undergrad and AI for my Postgrad. </p>
 									</div>
@@ -260,60 +258,75 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-		<!-- Randomly generate the home page image by generating a random array based on number of images available, then cycle through that array and once done regenerates the array
-		 Making the random less random -->
-		<script>
-			const images = [
-				'assets/images/frontpage/me_beach.jpg',
-				'assets/images/frontpage/me.jpg',
-				'assets/images/frontpage/me_cafe.jpg',
-				'assets/images/frontpage/me_hongkong.jpg',
-				'assets/images/frontpage/me_rock.jpg',
-				'assets/images/frontpage/me_skiing.jpg',
-				'assets/images/frontpage/me_waistcoat.jpg'
-			];
 
-			function generateShuffledOrder(length, forbiddenStart)
-			{
-				let arr = Array.from({length: length}, (_, i) => i);
+			<script>
+				const siteGreetings = [
+					'Greetings!',
+					'Hello!',
+					'G day!',
+					'Salve!',
+					'Bonjour!',
+					'Salutations!',
+					'Hi there!'
+				];
+				const pick = siteGreetings[Math.floor(Math.random() * siteGreetings.length)];
+				document.getElementById('random-greetings').textContent = pick;
+			</script>
 
-				// Shuffle the array
-				const shuffle = (array) => {
-					for (let i = array.length - 1; i > 0; i--) {
-						const j = Math.floor(Math.random() * (i + 1));
-						[array[i], array[j]] = [array[j], array[i]];
+			<!-- Randomly generate the home page image by generating a random array based on number of images available, then cycle through that array and once done regenerates the array
+			Making the random less random -->
+			<script>
+				const images = [
+					'assets/images/frontpage/me_beach.jpg',
+					'assets/images/frontpage/me.jpg',
+					'assets/images/frontpage/me_cafe.jpg',
+					'assets/images/frontpage/me_hongkong.jpg',
+					'assets/images/frontpage/me_rock.jpg',
+					'assets/images/frontpage/me_skiing.jpg',
+					'assets/images/frontpage/me_waistcoat.jpg'
+				];
+
+				function generateShuffledOrder(length, forbiddenStart)
+				{
+					let arr = Array.from({length: length}, (_, i) => i);
+
+					// Shuffle the array
+					const shuffle = (array) => {
+						for (let i = array.length - 1; i > 0; i--) {
+							const j = Math.floor(Math.random() * (i + 1));
+							[array[i], array[j]] = [array[j], array[i]];
+						}
+						return array;
+					};
+
+					let newOrder = shuffle([...arr]);
+
+					// If the new first element is the same as the previous last element, reshuffle
+					while (newOrder[0] === forbiddenStart && length > 1) {
+						newOrder = shuffle([...arr]);
 					}
-					return array;
-				};
 
-				let newOrder = shuffle([...arr]);
-
-				// If the new first element is the same as the previous last element, reshuffle
-				while (newOrder[0] === forbiddenStart && length > 1) {
-					newOrder = shuffle([...arr]);
+					return newOrder;
 				}
 
-				return newOrder;
-			}
+				let savedOrder = JSON.parse(localStorage.getItem('imageOrder'));
+				let currentStep = localStorage.getItem('imageStep');
 
-			let savedOrder = JSON.parse(localStorage.getItem('imageOrder'));
-			let currentStep = localStorage.getItem('imageStep');
+				// Determine if need a new cycle
+				if (!savedOrder || currentStep === null || currentStep >= savedOrder.length) {
+					// Find out what the last image shown was to prevent a duplicate
+					const lastImageOfOldCycle = savedOrder ? savedOrder[savedOrder.length - 1] : null;
 
-			// Determine if need a new cycle
-			if (!savedOrder || currentStep === null || currentStep >= savedOrder.length) {
-				// Find out what the last image shown was to prevent a duplicate
-				const lastImageOfOldCycle = savedOrder ? savedOrder[savedOrder.length - 1] : null;
+					savedOrder = generateShuffledOrder(images.length, lastImageOfOldCycle);
+					currentStep = 0;
+				}
 
-				savedOrder = generateShuffledOrder(images.length, lastImageOfOldCycle);
-				currentStep = 0;
-			}
+				const imageIndexToDisplay = savedOrder[currentStep];
+				document.getElementById('random-image').src = images[imageIndexToDisplay];
 
-			const imageIndexToDisplay = savedOrder[currentStep];
-			document.getElementById('random-image').src = images[imageIndexToDisplay];
-
-			localStorage.setItem('imageOrder', JSON.stringify(savedOrder));
-			localStorage.setItem('imageStep', parseInt(currentStep) + 1);
-		</script>
+				localStorage.setItem('imageOrder', JSON.stringify(savedOrder));
+				localStorage.setItem('imageStep', parseInt(currentStep) + 1);
+			</script>
 
 
 	</body>
