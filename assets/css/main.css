@@ -2,12 +2,6 @@
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
-/*
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -101,10 +95,17 @@ input, select, textarea {
 
 	body {
 		background-color: #935d8c;
-		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #19ae0f 15%, #4d7693 85%);
-		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #19ae0f 15%, #4d7693 85%);
-		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #19ae0f 15%, #4d7693 85%);
-		background-image: url("images/overlay.png"), linear-gradient(45deg, #19ae0f 15%, #4d7693 85%);
+		/* Mozilla background */
+		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #19ae0fcc 15%, #4d7693 85%);
+
+		/* Chrome, Safari, Edge background */
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #19ae0fcc 15%, #4d7693 85%);
+
+		/* Explorer background */
+		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #19ae0fcc 15%, #4d7693 85%);
+
+		/* Other background */
+		background-image: url("images/overlay.png"), linear-gradient(45deg, #19ae0fcc 15%, #4d7693 85%);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3332,6 +3333,62 @@ input, select, textarea {
 
 		}
 
+
+
+
+/* Dropdown Specific Styles */
+
+/* 1. Ensure the parent 'li' is the anchor for the dropdown position */
+#nav ul li.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* 2. Style the hidden dropdown list */
+#nav ul li ul {
+	display: none;
+	position: absolute;
+	top: 100%; /* Positions it directly below the parent */
+	left: 50%;
+	transform: translateX(-50%);
+
+	background-color: #f7f7f7;
+	min-width: 10em;
+	padding: 0.5em 0;
+	border-radius: 0 0 8px 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	z-index: 10;
+	text-align: left;
+}
+
+
+#nav ul li.dropdown .dropdown-content li {
+	display: block;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+#nav ul li ul li a {
+	display: block;
+	width: 100%;
+	padding: 0.5em 1.25em;
+	height: auto;
+	line-height: normal;
+	border-radius: 0; /* Match look of dropdown */
+}
+
+/* 4. Show the dropdown on hover */
+#nav ul li:hover > ul {
+	display: block;
+}
+
+/* Optional: Slight tweak for the .alt (fixed) nav state */
+#nav.alt ul li ul {
+	background-color: rgba(247, 247, 247, 0.98);
+}
+
+
+
 /* Main */
 
 	#main {
@@ -3843,7 +3900,7 @@ a:hover {
 	color: #636363;
 	list-style: none;
 	margin: 4px 0;
-	border-left: 2px solid #8cc9f0;
+	border-left: 2px solid #19b53d;
 	transition: 0.5s;
 	cursor: pointer;
 }
@@ -3861,8 +3918,13 @@ a:hover {
 	transition: 0.5s;
 }
 
+.projects-list ul li:hover a {
+	color: #ffffff !important;
+	text-decoration: none;
+}
+
 .projects-list ul li:hover span {
-	color: #111;
+	color: #ffffff;
 }
 
 .projects-list ul li:before {
@@ -3870,7 +3932,7 @@ a:hover {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #8cc9f0;
+	background: #19b53d;
 	transform: scaleX(0);
 	transform-origin: left;
 	transition: 0.5s;
@@ -3879,6 +3941,9 @@ a:hover {
 .projects-list ul li:hover:before {
 	transform: scaleX(1);
 }
+
+
+
 
 
 /* 1. Define the icon name and its unicode */
