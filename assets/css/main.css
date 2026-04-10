@@ -101,10 +101,10 @@ input, select, textarea {
 
 	body {
 		background-color: #935d8c;
-		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #19ae0f 15%, #4d7693 85%);
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #19ae0f 15%, #4d7693 85%);
+		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #19ae0f 15%, #4d7693 85%);
+		background-image: url("images/overlay.png"), linear-gradient(45deg, #19ae0f 15%, #4d7693 85%);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3878,4 +3878,22 @@ a:hover {
 
 .projects-list ul li:hover:before {
 	transform: scaleX(1);
+}
+
+
+/* 1. Define the icon name and its unicode */
+.fa-letterboxd:before {
+	content: "\e62d" !important;
+}
+
+/* 2. Force the browser to look at the SVG font file you edited */
+@font-face {
+	font-family: "Font Awesome 5 Brands";
+	src: url("../webfonts/fa-brands-400.svg#fontawesome") format("svg") !important;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.fa-letterboxd {
+	font-family: "Font Awesome 5 Brands" !important;
 }
