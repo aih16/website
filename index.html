@@ -4,10 +4,11 @@
 		Add Aber Webring
 		Finish work section
 		Finish Education section
+		Look into having the landing page picture change every refresh
 -->
 <html>
 	<head>
-		<title>Aidan Hogden // Senior Applications Developer</title>
+		<title>Aidan Hogden // Senior Application Developer</title>
 		<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -21,7 +22,12 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<span class="logo"><img src="images/me.jpg" style="clip-path: circle(); width: 25%; height: 25%" alt="" /></span>
+						<span class="logo"><img id="random-image" src="" style="clip-path: circle(); width: 800px; height: 800px" alt="" /></span>
+
+						<h1>Aidan Hogden</h1>
+						<p>Senior Application Developer<br />
+						& AI MSc Gradaute.</p>
+
 						<ul class="icons">
 							<li><a href="https://github.com/aih16" class="icon brands fa-github fa-2x"><span class="label">GitHub</span></a></li>
 							<li><a href="https://www.linkedin.com/in/aidan-hogden/" class="icon brands fa-linkedin fa-2x"><span class="label">Linkedin</span></a></li>
@@ -36,9 +42,6 @@
 								</a>
 							</li>
 						</ul>
-						<h1>Aidan Hogden</h1>
-						<p>Senior Application Developer<br />
-						& AI MSc Gradaute.</p>
 					</header>
 
 				<!-- Nav -->
@@ -142,11 +145,10 @@
 										<li><span><a href="https://github.com/aih16/MajorProject">BSc Major Project</a></span></li>
 									</ul>
 								</div>
+							</header>
 
 
-
-
-							/*
+							<!--
 							</header>
 							<footer class="major">
 								<ul class="actions special">
@@ -154,10 +156,10 @@
 									<li><a href="generic.html" class="button">Learn More</a></li>
 								</ul>
 							</footer>
-							*/
-
+							-->
 
 						</section>
+
 
 
 						<!-- Education -->
@@ -247,6 +249,26 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- Random image picker script-->
+		<script>
+			// 1. Create an array of your image file paths
+			const images = [
+				'images/frontpage/me_beach.jpg',
+				'images/frontpage/me.jpg',
+				'images/frontpage/me_cafe.jpg',
+				'images/frontpage/me_hongkong.jpg',
+				'images/frontpage/me_rock.jpg',
+				'images/frontpage/me_skiing.jpg',
+				'images/frontpage/me_waistcoat.jpg'
+			];
+
+			// 2. Generate a random index based on the array length
+			const randomIndex = Math.floor(Math.random() * images.length);
+
+			// 3. Select the image element and update its 'src' attribute
+			document.getElementById('random-image').src = images[randomIndex];
+		</script>
 
 	</body>
 </html>
