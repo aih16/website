@@ -29,42 +29,22 @@
     <!-- Main -->
     <div id="main">
 
-        <!-- Content -->
         <section id="content" class="main">
-            <h2>Dissertation</h2>
-            <p>Here's what I did for my MSc dissertation</p>
-            <h2>Major Project</h2>
-            <p>Here's what I did for my BSc Major Project</p>
-            <h2>FOSDEM</h2>
-            <p>Whilst at Uni I was part of AberCompSoc and the BCS and one of the big things we did each year was attended FOSDEM. FOSDEM is the Free and Open source Software Developers' European Meeting and is held each year in Brussels.</p>
-            <p>I attended in 2017, 2018 and 2020, missing 2019 due to my IY. A lot of members of AberCompSoc who went with us and had attended previously were volunteers who helped run the event and convinced us to help out, I still have the t-shirt.
-            It was really fun seeing all the speakers and the talks they gave each year, as well as helping out and feeling part of something bigger.
-            What was also fun was taking part in what felt almost like traditions, for example each year we always went to the Delirium bar as FOSDEM "officially" started there with a Beer Event.</p>
+            <header class="major">
+                <h2>Blog</h2>
+                <p>Thoughts on NLP, the Reserves, and life in Wales.</p>
+            </header>
 
-            <h2>SailBot</h2>
-
-
-            <article class="gallery">
-                <img src="/assets/images/reserves-images/reserves-group.jpg" onclick="expandImage(this)" alt="" />
-                <img src="/assets/images/reserves-images/reserves-window.jpg" onclick="expandImage(this)" alt="" />
-                <img src="/assets/images/reserves-images/reserves-me.jpg" onclick="expandImage(this)" alt="" />
-                <img src="/assets/images/reserves-images/reserves-cic.jpg" onclick="expandImage(this)" alt="" />
-                <img src="/assets/images/reserves-images/reserves-cohesion.jpg" onclick="expandImage(this)" alt="" />
-            </article>
-
-
-
-            <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis fames ac ante ipsum primis in faucibus.</p>
-            <p>Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Consequat leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit enim turpis lorem ipsum dolor sit amet feugiat. Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet est velit quis lorem.</p>
-            <h2>Tempus veroeros</h2>
-            <p>Cep risus aliquam gravida cep ut lacus amet. Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae ante vestibulum ante. Blandit. Ante accumsan nisi eu placerat gravida placerat adipiscing in risus fusce vitae ac mi accumsan nunc in accumsan tempor blandit aliquet aliquet lobortis. Ultricies blandit lobortis praesent turpis. Adipiscing accumsan adipiscing adipiscing ac lacinia cep. Orci blandit a iaculis adipiscing ac. Vivamus ornare laoreet odio vis praesent nunc lorem mi. Erat. Tempus sem faucibus ac id. Vis in blandit. Nascetur ultricies blandit ac. Arcu aliquam. Accumsan mi eget adipiscing nulla. Non vestibulum ac interdum condimentum semper commodo massa arcu.</p>
+            <ul class="alt">
+                {% for post in site.posts %}
+                <li>
+                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                    <p>{{ post.date | date: "%B %d, %Y" }} - {{ post.description }}</p>
+                    <a href="{{ post.url | relative_url }}" class="button small">Read More</a>
+                </li>
+                {% endfor %}
+            </ul>
         </section>
-
-
-
-        <div id="imageOverlay" class="overlay" onclick="closeImage()">
-            <img id="overlayImg" src="" alt="Full size">
-        </div>
     </div>
 
     <!-- Footer -->
