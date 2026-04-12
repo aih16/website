@@ -1,0 +1,11 @@
+title: Aidan Hogden
+description: Senior Developer & Army Reservist
+baseurl: "" # Leave empty if your site is at username.github.io
+url: "https://github.com/aih16"
+
+# This helps with the relative_url filters we added
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

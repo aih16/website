@@ -3748,9 +3748,11 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		padding: 5em 5em 3em 5em ;
-		width: calc(100% + 2em);
-		margin: 0 0 3em -2em;
+		padding: 5em 5em 5em 5em ;
+		width: 100%;
+		margin: 0 0 3em 0;
+		justify-content: center;
+		align-items: center;
 	}
 
 		#footer > * {
@@ -3817,6 +3819,15 @@ input, select, textarea {
 			}
 
 		}
+
+	#footer-section {
+		justify-content: center;
+		align-items: center;
+		width: auto;
+		min-width: 0;
+		margin-left: 0;
+	}
+
 
 /* Wrapper */
 
@@ -3990,4 +4001,141 @@ a:hover {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+}
+
+.flippable-image {
+	width: 200px;
+	cursor: pointer;
+	/* transition duration is 1s */
+	transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+	backface-visibility: hidden;
+}
+
+.is-flipped {
+	/* Flip halfway over */
+	transform: rotateY(180deg);
+}
+
+
+
+#work-images {
+	/* Shape */
+	clip-path: circle();
+
+	/* Responsive Size */
+	width: 10vw;
+	aspect-ratio: 1 / 1; /* Keeps it a perfect square/circle */
+	height: auto;
+
+	/* Scaling */
+	object-fit: cover;
+
+	/* Positioning */
+	object-position: center;
+}
+
+
+
+
+
+/* Image gallery and overlay*/
+.gallery {
+	--size: 200px;
+	display: grid;
+	grid-template-columns: repeat(5, var(--size));
+	gap: 10px;
+
+	/* Dims other images when one is hovered */
+	&:has(:hover) img:not(:hover),
+	&:has(:focus) img:not(:focus) {
+		filter: brightness(0.5) contrast(0.5);
+	}
+
+	& img {
+		object-fit: cover;
+		width: var(--size);
+		height: var(--size);
+		grid-column: auto;
+		border-radius: 5px;
+
+		/* Combined transition for smooth scaling and filtering */
+		transition: transform 0.3s ease, filter 0.25s ease;
+
+		/* Ensures the image doesn't get cut off by grid boundaries */
+		position: relative;
+
+		&:hover,
+		&:focus {
+			/* Scale up (1.1 = 10% larger). Increase to 1.2 or more if desired */
+			transform: scale(1.5);
+
+			/* Bring the hovered image to the front so it overlaps neighbors */
+			z-index: 10;
+
+			/* Keep it bright */
+			filter: brightness(1);
+			outline: none;
+		}
+	}
+
+	/* Standardized grid placement */
+	&:nth-child(5n - 1) {
+		grid-column: auto;
+	}
+}
+
+/* Overlay for full screen pictures */
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: 9999;
+	justify-content: center;
+	align-items: center;
+	cursor: zoom-out;
+}
+
+/* The big image */
+.overlay img {
+	max-width: 90%;
+	max-height: 90%;
+	border-radius: 5px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.5);
+	transform: scale(0.8);
+	animation: zoomIn 0.2s forwards;
+}
+
+@keyframes zoomIn {
+	to { transform: scale(1); }
+}
+
+
+
+/* Cat image container */
+.cat-container {
+	display: flex;
+	justify-content: space-between; /* Spreads them out evenly */
+	align-items: flex-start;
+	width: 100%;
+}
+
+.cat-container figure {
+	width: 28%; /* Keeps your original sizing */
+	margin: 0;
+	text-align: center; /* Centers the name under the image */
+}
+
+.cat-circle {
+	clip-path: circle();
+	width: 100%; /* Fills the 28% width of the figure */
+	height: auto;
+}
+
+figcaption {
+	font-weight: bold;
+	font-family: sans-serif; /* Or matches your site font */
 }

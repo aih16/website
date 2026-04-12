@@ -31,7 +31,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<span class="logo"><img id="random-image" src="" style="clip-path: circle();" alt="" /></span>
+						<span class="logo"><img class="flippable-image" id="random-image" src="" style="clip-path: circle();" alt="" /></span>
 
 						<p id="custom_heading">Aidan Hogden</p>
 						<p>Senior Application Developer<br />
@@ -40,7 +40,7 @@
 						<ul class="icons">
 							<li><a href="https://github.com/aih16" class="icon brands fa-github fa-2x"><span class="label">GitHub</span></a></li>
 							<li><a href="https://www.linkedin.com/in/aidan-hogden/" class="icon brands fa-linkedin fa-2x"><span class="label">Linkedin</span></a></li>
-							<li><a href="mailto:aidanhogden@gmail.com" class="fa fa-envelope fa-2x"</li>
+							<li><a href="mailto:aidanhogden@gmail.com" class="fa fa-envelope fa-2x"></a></li>
 							<li><a href="https://www.instagram.com/templareaid/" class="icon brands fa-instagram fa-2x"><span class="label">Instagram</span></a></li>
 							<!-- Tried like a million things to get the Letterboxd logo working, turns out I can just hard code it here and it works fine so why not -->
 							<li>
@@ -53,17 +53,9 @@
 							</li>
 						</ul>
 						
-						<a href="https://aberwebr.ing/aidan/left" title="Previous site in Aber WebRing" aria-label="Go to previous site in webring">
-							<span class="label">←</span>
-						</a>
-
-						<a href="https://aberwebr.ing/" title="Aber WebRing homepage" aria-label="Visit Aber WebRing" class="webring-home">
-							<span class="label">⌂</span>
-    					</a>
-
-						<a href="https://aberwebr.ing/aidan/right" title="Next site in Aber WebRing" aria-label="Go to next site in webring">
-							<span class="label">→</span>
-						</a>
+						<a href="https://aberwebr.ing/aidan/left" class="fa fa-arrow-left fa-1x" title="Previous site in Aber WebRing" aria-label="Go to previous site in webring" style="padding-right: 1.5%"></a>
+						<a href="https://aberwebr.ing/" class="fa fa-home fa-1x" title="Aber WebRing homepage" aria-label="Visit Aber WebRing">Aber WebRing</a>
+						<a href="https://aberwebr.ing/aidan/right" class="fa fa-arrow-right fa-1x" title="Next site in Aber WebRing" aria-label="Go to next site in webring" style="padding-left: 1.5%"></a>
 
 					</header>
 
@@ -75,22 +67,32 @@
 							<li><a href="#second">Projects</a></li>
 							<li><a href="#third">Education</a></li>
 
-
 							<li>//</li>
-							<li><a href="generic.html">Other Page</a></li>
-							<li><a href="generic2.html">Other Page 2 - This time is personal</a></li>
+
+							<li class="dropdown">
+								<a href="javascript:void(0)" class="dropbtn">
+									About Me <i class="fa fa-caret-down"></i>
+								</a>
+								<ul class="dropdown-content">
+									<li><a href="about-me-pages/bio.html">Bio</a></li>
+									<li><a href="about-me-pages/reserves.html">Reserves</a></li>
+									<li><a href="about-me-pages/university.html">University</a></li>
+								</ul>
+							</li>
 
 
 							<li class="dropdown">
 								<a href="javascript:void(0)" class="dropbtn">
-									Dropdown <i class="fa fa-caret-down"></i>
+									Hobbies <i class="fa fa-caret-down"></i>
 								</a>
 								<ul class="dropdown-content">
-									<li><a href="generic.html">Link 1</a></li>
-									<li><a href="generic.html">Link 2</a></li>
-									<li><a href="generic2.html">Link 3</a></li>
+									<li><a href="interests-pages/warhammer.html">Warhammer</a></li>
+									<li><a href="interests-pages/cinephile.html">Cinephile</a></li>
+									<li><a href="interests-pages/airsoft.html">Airsoft</a></li>
 								</ul>
 							</li>
+
+							<li><a href="/about-me-pages/blog.html">Blog</a></li>
 
 						</ul>
 					</nav>
@@ -103,16 +105,19 @@
 								<div class="spotlight">
 									<div class="content">
 										<h2><span id="random-greetings"></span> I'm Aidan.</h2>
-										<p>I'm a Senior Developer for the Senedd, working as a "full-stack" engineer specifically ASP.NET where I mainly create internal web apps for use at the Senedd. <br>
-										My academic background is in AI and ML as I studied AI & Robotics for my Undergrad and AI for my Postgrad. </p>
+										<p>I am a Senior Developer at the Senedd, where I specialize as a "full-stack" engineer. My daily focus involves architecting and building internal (and the occasional external) web applications using the ASP.NET ecosystem to support the work of the Welsh Parliament.<br>
+											My technical roots are in Artificial Intelligence and Machine Learning, having earned both my Undergraduate and Postgraduate degrees in this field, with a side of robotics.</p>
 									</div>
 								</div>
 
 
 								<div class="spotlight">
-									<img src="assets/images/reserves.jpg" style="clip-path: circle(); width: 25%; height: 25%; margin-right: 5%" alt="" />
-									<p>In my spare time I am also part of the Army Reserve, I have been a Reservist since 2020 when I joined the 3 Royal Welsh regiment where I serve as an Infantryman. <br>
-										I'm a Senior Developer for the Senedd, working as a "full-stack" engineer specifically ASP.NET where I mainly create internal web apps for use at the Senedd. </p>
+									<img src="assets/images/reserves.jpg" style="clip-path: circle(); width: 15vw; height: auto; margin-right: 5%" alt="" />
+									<p>
+										I've a keen interest in AI and Machine Learning ever since reading i,Robot in my first year of University, where I promptly changed my course from Video Game Development to AI & Robotics. <br><br>
+										Specifically I'm interested in the field of Natural Language Processing, or NLP, as evidenced by my BSc and MSc dissertations revolving around sentiment analysis, extraction, classification and prediction based on text. <br><br>
+										In my spare time I am also part of the Army Reserve, I have been a Reservist since 2020 when I joined the Royal Welsh regiment where I currently serve as an Infantryman in C Company, 3rd Battalion.
+									</p>
 								</div>
 
 							</section>
@@ -126,25 +131,25 @@
 								</header>
 								<ul class="features">
 									<li>
-										<span class="icon solid major style1 fa-code"></span>
-										<h3>Ipsum consequat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+										<img id="work-images" src="assets/images/senedd.png" style="clip-path: circle();" alt="" />
+										<h3>Senedd</h3>
+										<p>Currently my main employment is working for the Welsh Parliament, also known as the Senedd. I've been there since 2023 where I started as an ICT Graduate Developer where I develop ASP.NET web apps, mostly for use in-house.</p>
 									</li>
 
 									<li>
-										<span class="icon major style3 fa-copy"></span>
-										<h3>Amed sed feugiat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+										<img id="work-images" src="assets/images/army.jpg" style="clip-path: circle();" alt="" />
+										<h3>British Army</h3>
+										<p>I serve as a Fusilier in the Army part-time and in my 6 years there I have completed a range of courses and training, including being part of NATO exercises, completing a Radio Operators course and even Rock Climbing and Skiing in the form of Adventure Training. </p>
 									</li>
 									<li>
-										<span class="icon major style5 fa-amazon"></span>
-										<h3>Dolor nullam</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+										<img id="work-images" src="assets/images/adobe.jpg" style="clip-path: circle();" alt="" />
+										<h3>Adobe</h3>
+										<p>For my industrial year, I relocated to Dublin to work as a Service Desk Engineer on the Adobe Analytics Cloud. Working within a diverse international team—including veterans from companies like Blizzard provided my first high-level exposure to the tech industry.</p>
 									</li>
 								</ul>
 								<footer class="major">
 									<ul class="actions special">
-										<li><a href="generic.html" class="button">Learn More</a></li>
+										<li><a href="about-me-pages/bio.html" class="button">More</a></li>
 									</ul>
 								</footer>
 							</section>
@@ -173,8 +178,8 @@
 							</header>
 							<footer class="major">
 								<ul class="actions special">
-									<li><a href="generic.html" class="button primary">Get Started</a></li>
-									<li><a href="generic.html" class="button">Learn More</a></li>
+									<li><a href="bio.html" class="button primary">Get Started</a></li>
+									<li><a href="bio.html" class="button">Learn More</a></li>
 								</ul>
 							</footer>
 							-->
@@ -187,64 +192,30 @@
 
 							<section id="third" class="main special">
 								<header class="major">
-									<h2>Ipsum consequat</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+									<h2>Education</h2>
+									<p>I went to Aberystwyth University where I studied Artificial Intelligence and Robotics<br />
+										for my BSc and then for my MSc I studied Artificial Intelligence.</p>
 								</header>
-								<ul class="statistics">
-									<li class="style1">
-										<span class="icon solid fa-code-branch"></span>
-										<strong>5,120</strong> Etiam
-									</li>
-									<li class="style2">
-										<span class="icon fa-folder-open"></span>
-										<strong>8,192</strong> Magna
-									</li>
-									<li class="style3">
-										<span class="icon solid fa-signal"></span>
-										<strong>2,048</strong> Tempus
-									</li>
-									<li class="style4">
-										<span class="icon solid fa-laptop"></span>
-										<strong>4,096</strong> Aliquam
-									</li>
-									<li class="style5">
-										<span class="icon fa-gem"></span>
-										<strong>1,024</strong> Nullam
-									</li>
-								</ul>
-								<p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
+
+								<p class="content">In my time at University I took part in a number of societies as well as taking up an industrial year between my 2nd and 3rd years of study.
+									I joined AberCompSoc, the computer society as well as AberSailBot, a group that takes part in the International Robotic Sailing Regatta, also known as SailBot, where the goal is to create an unmanned sailboat that navigates through a variety of challenges with limited, if any, human control.
+									As mentioned I also moved to Dublin, Ireland for a year during my studies as part of an industrial year to gain some experience in the tech industry where I somehow managed to land a job with Adobe.</p>
 								<footer class="major">
 									<ul class="actions special">
-										<li><a href="generic.html" class="button">Learn More</a></li>
+										<li><a href="about-me-pages/bio.html" class="button">Learn More</a></li>
 									</ul>
 								</footer>
 							</section>
 
 					</div>
 
-				<!-- Footer -->
+					<!-- Footer -->
 					<footer id="footer">
-						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn More</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>Cardiff &bull; Wales &bull; UK</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">aih16@outlook.com</a></dd>
-							</dl>
+						<section id="footer-section">
 							<ul class="icons">
 								<li><a href="https://github.com/aih16" class="icon brands fa-github fa-2x"><span class="label">GitHub</span></a></li>
 								<li><a href="https://www.linkedin.com/in/aidan-hogden/" class="icon brands fa-linkedin fa-2x"><span class="label">Linkedin</span></a></li>
+								<li><a href="mailto:aidanhogden@gmail.com" class="fa fa-envelope fa-2x"></a></li>
 								<li><a href="https://www.instagram.com/templareaid/" class="icon brands fa-instagram fa-2x"><span class="label">Instagram</span></a></li>
 								<!-- Tried like a million things to get the Letterboxd logo working, turns out I can just hard code it here and it works fine so why not -->
 								<li>
@@ -257,7 +228,6 @@
 								</li>
 							</ul>
 						</section>
-
 					</footer>
 
 			</div>
@@ -271,10 +241,51 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<!-- Made the main page image flippable -->
+			<script>
+				const flipImg = document.getElementById('random-image');
+
+				// Create a function to handle the image swap logic
+				function swapToNextImage() {
+					let savedOrder = JSON.parse(localStorage.getItem('imageOrder'));
+					let currentStep = parseInt(localStorage.getItem('imageStep'));
+
+					// Check if needs a new cycle
+					if (!savedOrder || isNaN(currentStep) || currentStep >= savedOrder.length) {
+						const lastImageOfOldCycle = savedOrder ? savedOrder[savedOrder.length - 1] : null;
+						savedOrder = generateShuffledOrder(images.length, lastImageOfOldCycle);
+						currentStep = 0;
+					}
+
+					const imageIndexToDisplay = savedOrder[currentStep];
+					flipImg.src = images[imageIndexToDisplay];
+
+					// Save progress for next time
+					localStorage.setItem('imageOrder', JSON.stringify(savedOrder));
+					localStorage.setItem('imageStep', currentStep + 1);
+				}
+
+				// The Click Event
+				flipImg.addEventListener('click', () => {
+					// Start the CSS animation
+					flipImg.classList.add('is-flipped');
+
+					// Wait exactly 500ms (half of the 1s transition) to swap the source
+					setTimeout(() => {
+						swapToNextImage();
+					}, 500);
+
+					// Reset the rotation class after the animation finishes (500ms)
+					// so it's ready to flip again on the next click
+					setTimeout(() => {
+						flipImg.classList.remove('is-flipped');
+					}, 500);
+				});
+			</script>
 
 			<script>
 				const siteGreetings = [
-					'Greetings',
+					'Greetings,',
 					'Hello,',
 					'G day,',
 					'Salve,',
@@ -330,7 +341,7 @@
 
 				// Determine if need a new cycle
 				if (!savedOrder || currentStep === null || currentStep >= savedOrder.length) {
-					// Find out what the last image shown was to prevent a duplicate
+					// Find out what the last image shown was to prevent repeats
 					const lastImageOfOldCycle = savedOrder ? savedOrder[savedOrder.length - 1] : null;
 
 					savedOrder = generateShuffledOrder(images.length, lastImageOfOldCycle);
