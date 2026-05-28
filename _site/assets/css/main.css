@@ -4018,7 +4018,7 @@ a:hover {
 
 
 
-#work-images {
+.work-images {
 	/* Shape */
 	clip-path: circle();
 
